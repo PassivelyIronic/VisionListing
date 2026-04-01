@@ -6,7 +6,6 @@ from pydantic import ValidationError
 from app.llm.client import _parse_response
 from app.models import Condition, ListingData, ListingResponse
 
-
 # --- ListingData ---
 
 def test_listing_data_valid():
