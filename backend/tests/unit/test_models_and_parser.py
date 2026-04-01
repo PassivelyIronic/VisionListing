@@ -3,6 +3,7 @@ import json
 import pytest
 from pydantic import ValidationError
 
+from app.llm.client import _parse_response
 from app.models import Condition, ListingData, ListingResponse
 
 
@@ -29,7 +30,7 @@ def test_listing_data_confidence_bounds():
             category="Electronics/Other",
             estimated_price_pln=100.0,
             condition=Condition.GOOD,
-            confidence=1.5,  # powyżej 1.0 — powinno rzucić błąd
+            confidence=1.5,
         )
 
 
@@ -40,7 +41,7 @@ def test_listing_data_invalid_condition():
             description="Test",
             category="Electronics/Other",
             estimated_price_pln=100.0,
-            condition="Zniszczony",  # nie ma w Enum
+            condition="Zniszczony",
             confidence=0.5,
         )
 
@@ -64,9 +65,6 @@ def test_listing_response_structure():
 
 
 # --- _parse_response (logika parsowania JSON z LLM) ---
-
-from app.llm.client import _parse_response
-
 
 def test_parse_response_clean_json():
     raw = json.dumps({

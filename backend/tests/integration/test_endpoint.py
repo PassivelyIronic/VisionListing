@@ -1,7 +1,6 @@
 import json
 from unittest.mock import patch
 
-import pytest
 from fastapi.testclient import TestClient
 
 from app.main import app
@@ -18,7 +17,7 @@ MOCK_LISTING = ListingData(
     confidence=0.91,
 )
 
-SAMPLE_IMAGE = b"\xff\xd8\xff\xe0" + b"\x00" * 100  # minimalny nagłówek JPEG
+SAMPLE_IMAGE = b"\xff\xd8\xff\xe0" + b"\x00" * 100
 
 
 # --- /health ---
