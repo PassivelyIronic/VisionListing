@@ -1,0 +1,26 @@
+# Środowisko
+.env
+.env.local
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Conda
+.conda/
+
+# Pliki tymczasowe
+*.log
+*.tmp
+
+# Dane testowe (obrazy) - nie wrzucaj do repo
+backend/data/golden_dataset/*.jpg
+backend/data/golden_dataset/*.png
+backend/data/golden_dataset/*.jpeg
+
+# IDE
+.vscode/
+.idea/
+*.swp

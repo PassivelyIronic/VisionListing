@@ -1,0 +1,13 @@
+[
+  {
+    "image_file": "item_001.jpg",
+    "expected": {
+      "title": "Samsung Galaxy S21 128GB Czarny",
+      "description": "Smartfon w bardzo dobrym stanie. Brak rys na ekranie, lekkie ślady użytkowania z tyłu. Komplet z ładowarką i pudełkiem.",
+      "category": "Electronics/Smartphones/Android",
+      "estimated_price_pln": 900.0,
+      "condition": "Bardzo dobry",
+      "confidence": null
+    }
+  }
+]
