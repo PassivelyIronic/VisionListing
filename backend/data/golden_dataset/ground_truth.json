@@ -2,11 +2,231 @@
   {
     "image_file": "item_001.jpg",
     "expected": {
-      "title": "Samsung Galaxy S21 128GB Czarny",
-      "description": "Smartfon w bardzo dobrym stanie. Brak rys na ekranie, lekkie ślady użytkowania z tyłu. Komplet z ładowarką i pudełkiem.",
+      "title": "Samsung Galaxy S10 128GB Czarny",
+      "description": "Na sprzedaż smartfon Samsung Galaxy S10 w eleganckim, czarnym kolorze. Tylna obudowa oraz wyspa aparatów są w świetnym stanie wizualnym, bez zarysowań. Urządzenie jest bardzo zadbane, a błyszczące wykończenie wciąż robi doskonałe wrażenie. Świetny wybór dla osób szukających solidnego i eleganckiego telefonu w dobrej cenie.",
       "category": "Electronics/Smartphones/Android",
-      "estimated_price_pln": 900.0,
+      "estimated_price_pln": 450.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_002.jpg",
+    "expected": {
+      "title": "Apple iPhone 8 Plus 64GB Biały/Złoty",
+      "description": "Na sprzedaż Apple iPhone 8 Plus w klasycznej i poszukiwanej wersji kolorystycznej biały/złoty. Szklana obudowa i ramka są zachowane w bardzo ładnym stanie, bez pęknięć i większych zarysowań. Telefon prezentuje się znakomicie, wciąż oferując bardzo płynne działanie oraz świetnej jakości aparat. Gotowy do użytku przez nowego właściciela.",
+      "category": "Electronics/Smartphones/Apple",
+      "estimated_price_pln": 400.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_003.jpg",
+    "expected": {
+      "title": "Google Pixel 4a 128GB Czarny",
+      "description": "Do sprzedania Google Pixel 4a 128GB w matowym, czarnym wykończeniu. Telefon jest zadbany, obudowa oraz szkło aparatów nie posiadają żadnych głębokich rys ani uszkodzeń mechanicznych. To świetny, kompaktowy smartfon z czystym systemem Android i cenionym na całym świecie aparatem fotograficznym.",
+      "category": "Electronics/Smartphones/Android",
+      "estimated_price_pln": 450.0,
       "condition": "Bardzo dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_004.jpg",
+    "expected": {
+      "title": "OnePlus 7T 8/128GB Glacier Blue",
+      "description": "Na sprzedaż wydajny smartfon OnePlus 7T w pięknej, mieniącej się wersji kolorystycznej Glacier Blue. Szklane plecki oraz charakterystyczny, okrągły moduł potrójnego aparatu są w świetnym stanie, bez rzucających się w oczy śladów użytkowania. Zadbany, szybki i w pełni funkcjonalny sprzęt dla wymagających użytkowników.",
+      "category": "Electronics/Smartphones/Android",
+      "estimated_price_pln": 500.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_005.jpg",
+    "expected": {
+      "title": "Apple iPad 6. gen. (2018) 9.7\" 32GB Cellular",
+      "description": "Na sprzedaż Apple iPad 6. generacji (2018) w bogatszej wersji Cellular (z miejscem na kartę SIM, co pozwala na korzystanie z internetu wszędzie). Ekran działa bez zarzutu, a szybka frontowa jest wolna od pęknięć. Sprzęt posiada standardowe, normalne ślady użytkowania. Świetnie sprawdzi się do nauki, przeglądania internetu i oglądania filmów w podróży.",
+      "category": "Electronics/Tablets",
+      "estimated_price_pln": 500.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_006.jpg",
+    "expected": {
+      "title": "Samsung Galaxy Tab S6 Lite 10.4'' Wi-Fi",
+      "description": "Do sprzedania świetny tablet Samsung Galaxy Tab S6 Lite. Urządzenie sprzedaję w komplecie z dedykowanym etui ochronnym (book cover) oraz wielofunkcyjnym rysikiem S Pen. Wyświetlacz jest w bardzo dobrym stanie, bez defektów. Gotowy do płynnej pracy, notowania na studiach lub rozrywki od razu po wyjęciu z pudełka.",
+      "category": "Electronics/Tablets",
+      "estimated_price_pln": 700.0,
+      "condition": "Bardzo dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_007.jpg",
+    "expected": {
+      "title": "Amazon Fire HD 10 Tablet (11. Gen)",
+      "description": "Na sprzedaż tablet Amazon Fire HD 10 (11. generacja). Ekran o wysokiej rozdzielczości jest w 100% sprawny, a na obudowie widać jedynie normalne, drobne ślady użytkowania. To rewelacyjne, bardzo opłacalne urządzenie, które idealnie sprawdzi się do czytania, wygodnego przeglądania sieci, oglądania seriali i grania.",
+      "category": "Electronics/Tablets",
+      "estimated_price_pln": 300.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_008.jpg",
+    "expected": {
+      "title": "Apple AirPods Pro (1. Gen.)",
+      "description": "Do sprzedania bezprzewodowe słuchawki Apple AirPods Pro pierwszej generacji wraz z oryginalnym etui ładującym. Urządzenie nosi normalne ślady eksploatacji typowe dla słuchawek dousznych. Model niezmiennie ceniony za świetną jakość odtwarzanego dźwięku, głęboki bas i niezawodne, aktywne tłumienie hałasu (ANC) odcinające od otoczenia.",
+      "category": "Electronics/Headphones",
+      "estimated_price_pln": 350.0,
+      "condition": "Akceptowalny",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_009.jpg",
+    "expected": {
+      "title": "Sony WF-1000XM3 Słuchawki bezprzewodowe ANC",
+      "description": "Na sprzedaż flagowe słuchawki douszne Sony WF-1000XM3 w zestawie z eleganckim, czarno-miedzianym etui ładującym. Zewnętrznie prezentują się bardzo dobrze, obudowy są zadbane i wolne od większych zarysowań. Znakomity sprzęt z najwyższej półki dla osób ceniących świetne brzmienie i topową klasę redukcji szumów w trakcie podróży.",
+      "category": "Electronics/Headphones",
+      "estimated_price_pln": 200.0,
+      "condition": "Bardzo dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_010.jpg",
+    "expected": {
+      "title": "Słuchawki Jabra Elite Active 75t TWS",
+      "description": "Do sprzedania sportowe słuchawki bezprzewodowe Jabra Elite Active 75t w zestawie z dedykowanym etui ładującym. Stan wizualny oceniam na bardzo dobry – sprzęt jest zadbany i gotowy do działania. To rewelacyjny wybór do ciężkich treningów i aktywnego trybu życia dzięki zwiększonej odporności i bardzo pewnemu, wygodnemu trzymaniu w uchu.",
+      "category": "Electronics/Headphones",
+      "estimated_price_pln": 200.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_011.jpg",
+    "expected": {
+      "title": "Apple Watch Series 3 Czarny 42mm",
+      "description": "Na sprzedaż smartwatch Apple Watch w klasycznym, czarnym kolorze. Ekran dotykowy działa bez zarzutu, pięknie i płynnie wyświetlając aplikacje. Koperta i szkło noszą normalne ślady użytkowania. To niezawodny, bardzo wygodny sprzęt, który świetnie sprawdzi się jako przedłużenie Twojego iPhone'a do odczytywania powiadomień i monitorowania sportu.",
+      "category": "Electronics/Other",
+      "estimated_price_pln": 200.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_012.jpg",
+    "expected": {
+      "title": "Samsung Galaxy Watch Active 2 Czarny",
+      "description": "Do sprzedania elegancki i sportowy smartwatch Samsung Galaxy Watch Active 2. Urządzenie w pełni sprawne, z jasnym i czytelnym wyświetlaczem AMOLED. Wizualnie zegarek prezentuje się bardzo dobrze, stanowiąc świetny wybór dla osób aktywnych, które cenią sobie dokładne śledzenie treningów oraz stylowy wygląd na co dzień.",
+      "category": "Electronics/Other",
+      "estimated_price_pln": 250.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_013.jpg",
+    "expected": {
+      "title": "Fitbit Versa 2 Smartwatch Rose Gold",
+      "description": "Na sprzedaż rewelacyjny smartwatch Fitbit Versa 2 w pięknej kopercie w kolorze różowego złota (Rose Gold). Sprzęt jest w bardzo ładnym stanie, a ekran dotykowy błyskawicznie reaguje na polecenia. Zegarek jest lekki, wygodny i stanowi doskonałego asystenta do monitorowania zdrowia, snu oraz codziennej aktywności fizycznej.",
+      "category": "Electronics/Other",
+      "estimated_price_pln": 180.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_014.jpg",
+    "expected": {
+      "title": "Nintendo Switch V2 Konsola Przenośna",
+      "description": "Do sprzedania konsola Nintendo Switch. Urządzenie jest zadbane, ekran wyraźnie i bez problemów wyświetla grafikę w grach, a dołączone kontrolery Joy-Con działają precyzyjnie. Świetny sprzęt oferujący niesamowitą bibliotekę gier, idealny zarówno do grania mobilnego w podróży, jak i stacjonarnego przed telewizorem.",
+      "category": "Electronics/Gaming/Consoles",
+      "estimated_price_pln": 700.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_015.jpg",
+    "expected": {
+      "title": "Konsola Sony PlayStation Vita (PS Vita)",
+      "description": "Na sprzedaż kultowa, przenośna konsola Sony PlayStation Vita (urządzenie widoczne po prawej stronie zdjęcia). Ekran oraz przyciski są w bardzo dobrym stanie, sprzęt jest zadbany i gotowy do gry. Uwaga: przedmiotem ogłoszenia jest wyłącznie konsola PS Vita (widoczne obok urządzenie PlayStation Portal nie jest częścią zestawu). Świetny klasyk dla fanów mobilnego grania i wspaniałej biblioteki gier PlayStation.",
+      "category": "Electronics/Gaming/Consoles",
+      "estimated_price_pln": 550.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_016.jpg",
+    "expected": {
+      "title": "JBL Charge 4 Przenośny Głośnik Bluetooth Zielony",
+      "description": "Na sprzedaż oryginalny, bezprzewodowy głośnik JBL Charge 4 w unikalnym, zielonym kolorze. Charakterystyczny, materiałowy oplot jest czysty i nie posiada uszkodzeń mechanicznych. Głośnik generuje potężny dźwięk z mocnym basem. Wodoodporna konstrukcja i pojemna bateria czynią z niego idealny sprzęt na plenerowe wyjścia.",
+      "category": "Electronics/Other",
+      "estimated_price_pln": 280.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_017.jpg",
+    "expected": {
+      "title": "Głośnik bezprzewodowy Bose SoundLink Mini II",
+      "description": "Do sprzedania kultowy głośnik Bluetooth Bose SoundLink Mini II w srebrnym wariancie kolorystycznym. Aluminiowa obudowa prezentuje się świetnie i podkreśla charakter premium tego urządzenia. Mimo bardzo kompaktowych rozmiarów, głośnik oferuje niesamowicie głębokie, czyste i przestrzenne brzmienie, z którego słynie marka Bose.",
+      "category": "Electronics/Other",
+      "estimated_price_pln": 350.0,
+      "condition": "Bardzo dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_018.jpg",
+    "expected": {
+      "title": "Aparat Sony Alpha a6000 + Obiektyw 16-50mm",
+      "description": "Na sprzedaż znakomity aparat bezlusterkowy Sony Alpha a6000 w komplecie ze standardowym obiektywem Sony 16-50mm OSS. Body oraz optyka są bardzo zadbane i wolne od defektów. Ten szybki i poręczny aparat robi fenomenalne zdjęcia i świetnie sprawdzi się zarówno dla początkujących pasjonatów fotografii, jak i zaawansowanych twórców.",
+      "category": "Electronics/Cameras",
+      "estimated_price_pln": 1300.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_019.jpg",
+    "expected": {
+      "title": "Canon PowerShot G7 X Mark III Aparat Kompaktowy",
+      "description": "Do sprzedania niezwykle poszukiwany, topowy aparat kompaktowy Canon PowerShot G7 X Mark III. Konstrukcja i obiektyw zachowane w bardzo ładnym stanie. Dzięki jasnemu obiektywowi i odchylanemu ekranowi, jest to obecnie jeden z najlepszych i najbardziej polecanych aparatów do tworzenia profesjonalnych vlogów i zdjęć na social media.",
+      "category": "Electronics/Cameras",
+      "estimated_price_pln": 2300.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_020.jpg",
+    "expected": {
+      "title": "Dell XPS 13 Ultrabook Premium",
+      "description": "Na sprzedaż wysokiej klasy laptop Dell XPS 13. Urządzenie zachwyca smukłą konstrukcją oraz niesamowitym ekranem z ekstremalnie cienkimi ramkami (InfinityEdge). Klawiatura i touchpad są zadbane, a matryca działa bez zarzutu. Ten elegancki ultrabook to gwarancja prestiżu oraz wygody podczas intensywnej pracy biurowej i częstych podróży.",
+      "category": "Electronics/Laptops/Windows",
+      "estimated_price_pln": 1300.0,
+      "condition": "Dobry",
+      "confidence": null
+    }
+  },
+  {
+    "image_file": "item_021.jpg",
+    "expected": {
+      "title": "HP Spectre x360 Intel Evo Convertible",
+      "description": "Na sprzedaż laptop premium HP Spectre x360 w ekskluzywnym, ciemnym wykończeniu z prestiżowym certyfikatem Intel Evo. Klawiatura oraz cały obszar roboczy są w doskonałym stanie i nie wykazują mocnych śladów zużycia. Dotykowy ekran oferuje rewelacyjną jakość obrazu i świetne kolory. Znakomity, wydajny sprzęt konwertowalny (2w1) najwyższej klasy do biznesu i multimediów.",
+      "category": "Electronics/Laptops/Windows",
+      "estimated_price_pln": 3000.0,
+      "condition": "Dobry",
       "confidence": null
     }
   }
