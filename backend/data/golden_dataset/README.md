@@ -1,15 +1,14 @@
 # Golden Dataset
 
-Tutaj przechowujesz zdjęcia testowe i ich "ground truth" odpowiedzi.
+Zdjęcia testowe i zweryfikowane ręcznie odpowiedzi ("ground truth") służące do ewaluacji modelu.
 
 ## Struktura
 
 ```
 golden_dataset/
 ├── README.md              ← ten plik
-├── ground_truth.json      ← weryfikowane ręcznie odpowiedzi
-├── item_001.jpg           ← zdjęcie testowe (NIE wrzucaj do repo - patrz .gitignore)
-├── item_002.jpg
+├── ground_truth.json      ← ręcznie zweryfikowane dane (21 pozycji)
+├── item_001.jpg           ← zdjęcia testowe (nie są wersjonowane w repo)
 └── ...
 ```
 
@@ -20,18 +19,23 @@ golden_dataset/
   {
     "image_file": "item_001.jpg",
     "expected": {
-      "title": "Samsung Galaxy S21 128GB Czarny",
-      "description": "Smartfon w bardzo dobrym stanie. Brak rys na ekranie, lekkie ślady użytkowania z tyłu. Komplet z ładowarką i pudełkiem.",
+      "title": "Samsung Galaxy S10 128GB Czarny",
+      "description": "Opis ogłoszenia...",
       "category": "Electronics/Smartphones/Android",
-      "estimated_price_pln": 900.0,
-      "condition": "Bardzo dobry"
+      "estimated_price_pln": 450.0,
+      "condition": "Dobry",
+      "confidence": null
     }
   }
 ]
 ```
 
-## Jak zbierać dane testowe
+Pole `confidence` jest zawsze `null` w ground truth — model generuje je samodzielnie podczas ewaluacji.
 
-1. Zrób zdjęcia 20-30 urządzeń elektronicznych (lub pobierz z OLX/Allegro)
-2. Ręcznie uzupełnij `expected` dla każdego zdjęcia
-3. Uruchom `make test-evals` żeby zobaczyć jak model wypada vs ground truth
+## Jak uruchomić ewaluację
+
+```bash
+make test-evals
+```
+
+Testy sprawdzają: dokładność kategorii, odchylenie ceny (tolerancja 30%), pewność modelu (>0.5) i długość tytułu.

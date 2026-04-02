@@ -18,7 +18,7 @@ jobs:
         with:
           environment-file: environment.yml
           activate-environment: quick-sell
-          auto-activate-base: false
+          auto-activate: true
 
       - name: Lint (ruff)
         shell: bash -l {0}
@@ -36,10 +36,10 @@ jobs:
         shell: bash -l {0}
         env:
           MODEL_PROVIDER: ${{ secrets.MODEL_PROVIDER }}
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_MODEL: ${{ secrets.GOOGLE_MODEL }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-          ANTHROPIC_MODEL: ${{ secrets.ANTHROPIC_MODEL }}
-          OPENAI_MODEL: ${{ secrets.OPENAI_MODEL }}
         run: |
           cd backend
           pytest tests/integration/ -v
