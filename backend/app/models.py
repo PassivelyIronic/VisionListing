@@ -23,3 +23,33 @@ class ListingData(BaseModel):
 class ListingResponse(BaseModel):
     status: str
     data: ListingData
+
+
+class ListingSaveRequest(BaseModel):
+    title: str
+    description: str
+    category: str
+    estimated_price_pln: float
+    condition: str
+    confidence: float | None = None
+
+
+class ListingSaveResponse(BaseModel):
+    status: str
+    id: int
+
+
+class PublishedListing(BaseModel):
+    id: int
+    title: str
+    description: str
+    category: str
+    price_pln: float
+    condition: str
+    confidence: float | None
+    created_at: str
+
+
+class ListingsResponse(BaseModel):
+    status: str
+    data: list[PublishedListing]

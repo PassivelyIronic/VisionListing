@@ -15,6 +15,9 @@ htmlcov/
 *.log
 *.tmp
 
+# Baza danych (generowana lokalnie)
+backend/data/listings.db
+
 # Dane testowe (obrazy) - nie wrzucaj do repo
 backend/data/golden_dataset/*.jpg
 backend/data/golden_dataset/*.png

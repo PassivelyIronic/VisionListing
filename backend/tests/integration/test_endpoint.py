@@ -19,6 +19,15 @@ MOCK_LISTING = ListingData(
 
 SAMPLE_IMAGE = b"\xff\xd8\xff\xe0" + b"\x00" * 100
 
+SAMPLE_PAYLOAD = {
+    "title": "iPhone 14 128GB Północ",
+    "description": "Smartfon w bardzo dobrym stanie.",
+    "category": "Electronics/Smartphones/Apple",
+    "estimated_price_pln": 2200.0,
+    "condition": "Bardzo dobry",
+    "confidence": 0.91,
+}
+
 
 # --- /health ---
 
@@ -79,3 +88,31 @@ def test_extract_listing_llm_bad_json(mock_extract):
         files={"image": ("phone.jpg", SAMPLE_IMAGE, "image/jpeg")},
     )
     assert response.status_code == 502
+
+
+# --- /api/v1/listings ---
+
+def test_publish_listing_success():
+    response = client.post("/api/v1/listings", json=SAMPLE_PAYLOAD)
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "success"
+    assert "id" in data
+
+
+def test_get_listings_returns_list():
+    client.post("/api/v1/listings", json=SAMPLE_PAYLOAD)
+    response = client.get("/api/v1/listings")
+    assert response.status_code == 200
+    data = response.json()
+    assert data["status"] == "success"
+    assert isinstance(data["data"], list)
+    assert len(data["data"]) >= 1
+
+
+def test_published_listing_has_required_fields():
+    client.post("/api/v1/listings", json=SAMPLE_PAYLOAD)
+    response = client.get("/api/v1/listings")
+    item = response.json()["data"][0]
+    for field in ["id", "title", "category", "price_pln", "condition", "created_at"]:
+        assert field in item, f"Brak pola: {field}"
