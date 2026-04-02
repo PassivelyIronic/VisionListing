@@ -1,127 +1,119 @@
-# quick-sell ⚡
+# quick-sell
 
-Marketplace ogłoszeń dla **używanej elektroniki** z AI Pre-filling.
+Marketplace ogłoszeń dla używanej elektroniki z AI pre-filling.
 
-Wgrywasz zdjęcie urządzenia → AI automatycznie uzupełnia tytuł, opis, kategorię, cenę i stan.
+Wgrywasz zdjęcie urządzenia — model vision automatycznie uzupełnia tytuł, opis, kategorię, cenę i stan. Użytkownik weryfikuje i publikuje ogłoszenie.
 
 ![Demo](docs/demo.gif)
-<!-- TODO: nagrać demo i wrzucić tutaj -->
 
 ---
 
-## Co robi ten projekt
+## Stack
 
-| Funkcja | Opis |
-|---|---|
-| 📸 Vision LLM | Analizuje zdjęcie i ekstrahuje dane o przedmiocie |
-| 🏷️ Structured Output | Zwraca JSON z walidacją schematu (Pydantic) |
-| ⚙️ Multi-provider | Obsługa Anthropic i OpenAI — konfigurowalne przez `.env` |
-| 🧪 Testy | Unit, integracyjne i LLM-as-judge evaluation |
-| 🚀 CI/CD | GitHub Actions z lintem i testami |
+- **Backend:** FastAPI + Pydantic
+- **AI:** Google Gemini 2.5 Flash (vision + structured output) — obsługa Anthropic i OpenAI przez zmianę zmiennej w `.env`
+- **Frontend:** Streamlit
+- **Testy:** pytest — unit, integracyjne, ewaluacja na golden dataset (21 pozycji)
+- **CI/CD:** GitHub Actions
 
 ---
 
 ## Szybki start
 
 ```bash
-# 1. Sklonuj repo
 git clone https://github.com/TWOJ_NICK/quick-sell.git
 cd quick-sell
 
-# 2. Utwórz środowisko conda
 conda env create -f environment.yml
 conda activate quick-sell
 
-# 3. Skonfiguruj klucze API
 cp .env.example .env
-# Edytuj .env i wpisz swój klucz API
+# uzupełnij klucz API w .env
 
-# 4. Uruchom backend
-make run-backend
-
-# 5. W nowym terminalu uruchom frontend
-make run-frontend
+make run-backend    # http://localhost:8000
+make run-frontend   # http://localhost:8501
 ```
 
-Backend dostępny na: http://localhost:8000  
-Frontend dostępny na: http://localhost:8501  
 Swagger UI: http://localhost:8000/docs
 
 ---
 
-## Endpoint API
+## API
 
 ```
 POST /api/v1/extract-listing-info
 Content-Type: multipart/form-data
-
-Parametry: image (plik)
 ```
 
-Przykładowa odpowiedź:
 ```json
 {
   "status": "success",
   "data": {
-    "title": "MacBook Air M1 8GB/256GB Space Gray",
-    "description": "Laptop w bardzo dobrym stanie. Minimalne ślady użytkowania na obudowie...",
-    "category": "Electronics/Laptops/Apple",
-    "estimated_price_pln": 3200.00,
-    "condition": "Bardzo dobry",
-    "confidence": 0.91
+    "title": "Dell XPS 13 Ultrabook Premium",
+    "description": "Laptop w dobrym stanie. Smukła konstrukcja z ekranem InfinityEdge...",
+    "category": "Electronics/Laptops/Windows",
+    "estimated_price_pln": 1300.00,
+    "condition": "Dobry",
+    "confidence": 0.88
   }
 }
 ```
 
 ---
 
-## Testy i ewaluacja
+## Testy
 
 ```bash
-make test-unit      # testy logiki backendu (bez API)
-make test-int       # testy endpointu z prawdziwym API
-make test-evals     # LLM-as-judge na golden dataset
+make test-unit      # testy logiki backendu bez API
+make test-int       # testy endpointu z mock LLM
+make test-evals     # ewaluacja modelu na golden dataset (wymaga zdjęć lokalnie)
 ```
+
+Ewaluacja sprawdza: dokładność kategorii, odchylenie ceny (tolerancja ±30%), pewność modelu i poprawność tytułu.
 
 ---
 
-## Konfiguracja modelu
-
-Zmień providera i model bez zmiany kodu:
+## Zmiana providera
 
 ```env
 # .env
-MODEL_PROVIDER=anthropic          # lub: openai
-ANTHROPIC_MODEL=claude-3-5-haiku-20241022   # tańszy
-# ANTHROPIC_MODEL=claude-3-5-sonnet-20241022 # dokładniejszy
+MODEL_PROVIDER=google
+GOOGLE_MODEL=gemini-2.5-flash
+
+# MODEL_PROVIDER=anthropic
+# ANTHROPIC_MODEL=claude-3-5-haiku-20241022
+
+# MODEL_PROVIDER=openai
+# OPENAI_MODEL=gpt-4o-mini
 ```
 
 ---
 
-## Struktura projektu
+## Struktura
 
 ```
 quick-sell/
 ├── backend/
 │   ├── app/
-│   │   ├── main.py          # FastAPI app
-│   │   ├── config.py        # ustawienia z .env
-│   │   ├── models.py        # Pydantic schemas
-│   │   ├── router.py        # endpoint /extract-listing-info
+│   │   ├── main.py
+│   │   ├── config.py
+│   │   ├── models.py
+│   │   ├── router.py
 │   │   └── llm/
-│   │       ├── client.py    # abstrakcja nad providerami
-│   │       └── prompts.py   # system prompt
+│   │       ├── client.py       # abstrakcja nad providerami
+│   │       └── prompts.py      # system prompt
 │   ├── tests/
-│   │   ├── unit/            # testy bez API
-│   │   ├── integration/     # testy endpointu
-│   │   └── evals/           # LLM evaluation
+│   │   ├── unit/
+│   │   ├── integration/
+│   │   └── evals/
 │   └── data/
-│       └── golden_dataset/  # ground truth JSON + zdjęcia
+│       └── golden_dataset/     # 21 ręcznie zweryfikowanych pozycji
 ├── frontend/
-│   └── app.py               # Streamlit UI
-├── .github/workflows/
-│   └── ci.yml               # GitHub Actions
-├── environment.yml           # conda dependencies
+│   └── app.py
+├── scripts/
+│   └── build_golden_dataset.py
+├── .github/workflows/ci.yml
+├── environment.yml
 ├── Makefile
 └── .env.example
 ```
